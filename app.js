@@ -6,7 +6,7 @@
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
   const mobileTrack = document.getElementById("mobileTrack");
-  const mobileDots = document.getElementById("mobileDots");
+  const storyProgress = document.getElementById("storyProgress");
 
   let pageFlip = null;
   let opened = false;
@@ -103,22 +103,40 @@
   }
 
   function setupMobile() {
-    const cards = [...mobileTrack.querySelectorAll(".card")];
-    mobileDots.innerHTML = cards.map((_, i) => `<span${i === 0 ? ' class="is-active"' : ""}></span>`).join("");
-    const dots = [...mobileDots.querySelectorAll("span")];
+    const stories = [...mobileTrack.querySelectorAll(".story")];
+    if (!stories.length) return;
 
-    const syncDots = () => {
-      const cardWidth = cards[0].getBoundingClientRect().width + 13.6;
-      const index = Math.round(mobileTrack.scrollLeft / cardWidth);
-      dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+    storyProgress.innerHTML = stories.map(() => "<span><i></i></span>").join("");
+    const bars = [...storyProgress.querySelectorAll("span")];
+
+    const syncProgress = () => {
+      const index = Math.round(mobileTrack.scrollTop / mobileTrack.clientHeight);
+      bars.forEach((bar, i) => {
+        bar.classList.toggle("is-done", i < index);
+        bar.classList.toggle("is-active", i === index);
+      });
     };
 
-    mobileTrack.addEventListener("scroll", () => {
-      window.requestAnimationFrame(syncDots);
-    }, { passive: true });
+    mobileTrack.addEventListener(
+      "scroll",
+      () => window.requestAnimationFrame(syncProgress),
+      { passive: true },
+    );
+    syncProgress();
+
+    // Tap left/right edges to nudge stories (lookbook feel)
+    mobileTrack.addEventListener("click", (e) => {
+      if (e.target.closest("a, button")) return;
+      const y = e.clientY;
+      const h = window.innerHeight;
+      if (y > h * 0.78) {
+        mobileTrack.scrollBy({ top: mobileTrack.clientHeight, behavior: "smooth" });
+      } else if (y < h * 0.22 && mobileTrack.scrollTop > 10) {
+        mobileTrack.scrollBy({ top: -mobileTrack.clientHeight, behavior: "smooth" });
+      }
+    });
   }
 
-  // Soft floating petals on entrance
   const petals = document.querySelector(".entrance__petals");
   if (petals) {
     for (let i = 0; i < 14; i++) {

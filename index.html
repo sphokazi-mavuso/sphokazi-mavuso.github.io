@@ -258,94 +258,125 @@
 
       <p class="page-indicator" id="pageIndicator">1 / 6</p>
 
-      <!-- Mobile swipe deck -->
-      <div class="stage stage--mobile" aria-label="Media kit cards">
-        <div class="mobile-track" id="mobileTrack">
-          <article class="card card--cover">
-            <img src="./photos/cover-pink.jpg" alt="" />
-            <div class="card__veil"></div>
-            <div class="card__copy">
-              <p class="kicker light">Media kit · 2026</p>
-              <h2>Siphokazi <em>Mavuso</em></h2>
-              <p>Fashion · Beauty · Lifestyle</p>
-              <p class="handle">@sphokazi_mavuso</p>
+      <!-- Mobile: full-screen lookbook stories (not PDF pages) -->
+      <div class="stage stage--mobile" aria-label="Media kit lookbook">
+        <div class="story-progress" id="storyProgress" aria-hidden="true"></div>
+        <div class="story-reel" id="mobileTrack">
+          <!-- 1 Hero -->
+          <section class="story story--hero">
+            <img class="story__media" src="./photos/cover-pink.jpg" alt="" style="object-position: center 12%" />
+            <div class="story__scrim"></div>
+            <div class="story__body story__body--bottom">
+              <p class="story__eyebrow">South Africa · 2026</p>
+              <h2 class="story__title">Siphokazi</h2>
+              <p class="story__script">Mavuso</p>
+              <p class="story__line">Fashion · Beauty · Lifestyle</p>
+              <p class="story__swipe">Swipe up</p>
             </div>
-          </article>
+          </section>
 
-          <article class="card">
-            <p class="kicker">The creator</p>
-            <h3>Warm style. <em>Honest presence.</em></h3>
-            <img class="card__portrait" src="./photos/about-glasses.jpg" alt="Siphokazi" />
-            <p>
-              A South African fashion, beauty and lifestyle creator — Sunday ease with campaign polish. Content brands
-              can step into, with honesty at the centre.
-            </p>
-            <div class="chips">
-              <span>Styling</span><span>Skincare</span><span>Travel</span><span>Home</span>
+          <!-- 2 Meet -->
+          <section class="story story--meet">
+            <img class="story__media" src="./photos/about-glasses.jpg" alt="" style="object-position: center 8%" />
+            <div class="story__scrim story__scrim--soft"></div>
+            <div class="story__body story__body--bottom">
+              <p class="story__eyebrow">The girl</p>
+              <h2 class="story__headline">Warm style.<br /><em>Honest presence.</em></h2>
+              <p class="story__blurb">
+                Content that feels lived-in — outfit stories, beauty rituals, everyday luxury.
+              </p>
+              <div class="story__pills">
+                <span>Styling</span><span>Skincare</span><span>Travel</span><span>Home</span>
+              </div>
             </div>
-          </article>
+          </section>
 
-          <article class="card">
-            <p class="kicker">Audience</p>
-            <h3>High-trust community.</h3>
-            <div class="hero-stat hero-stat--stack">
-              <div><strong>11.2k</strong><span>Instagram</span></div>
-              <div><strong>~10k</strong><span>Avg. views</span></div>
-              <div><strong>9%</strong><span>Engagement</span></div>
+          <!-- 3 Pulse / numbers -->
+          <section class="story story--pulse">
+            <div class="story__glow"></div>
+            <div class="story__body story__body--center">
+              <p class="story__eyebrow dark">Her pulse</p>
+              <p class="story__mega">11.2k</p>
+              <p class="story__mega-label">Instagram · @sphokazi_mavuso</p>
+              <div class="story__pulse-grid">
+                <div><strong>~10k</strong><span>avg views</span></div>
+                <div><strong>9%</strong><span>engage</span></div>
+                <div><strong>5.4k</strong><span>Facebook</span></div>
+                <div><strong>2.3k</strong><span>TikTok</span></div>
+              </div>
+              <div class="story__ribbon">
+                <span>96% reach</span>
+                <span>79% women</span>
+                <span>82% SA</span>
+              </div>
             </div>
-            <div class="plat-row">
-              <article><h4>IG</h4><b>11.2k</b></article>
-              <article><h4>FB</h4><b>5.4k</b></article>
-              <article><h4>TT</h4><b>2.3k</b></article>
-            </div>
-            <div class="demo-row">
-              <div><strong>96%</strong><span>Reach</span></div>
-              <div><strong>79%</strong><span>Women</span></div>
-              <div><strong>82%</strong><span>SA</span></div>
-              <div><strong>9%</strong><span>Engage</span></div>
-            </div>
-          </article>
+          </section>
 
-          <article class="card">
-            <p class="kicker">The look</p>
-            <h3>Real-life fashion.</h3>
-            <div class="look-grid look-grid--mobile">
-              <figure><img src="./photos/fashion-black.jpg" alt="" /><figcaption>Fashion</figcaption></figure>
-              <figure><img src="./photos/portrait-car.jpg" alt="" /><figcaption>Lifestyle</figcaption></figure>
-              <figure><img src="./photos/lifestyle-car.jpg" alt="" /><figcaption>Beauty</figcaption></figure>
+          <!-- 4 Moodboard -->
+          <section class="story story--mood">
+            <div class="mood">
+              <figure class="mood__a">
+                <img src="./photos/fashion-black.jpg" alt="" style="object-position: center 10%" />
+                <figcaption>Fashion</figcaption>
+              </figure>
+              <figure class="mood__b">
+                <img src="./photos/portrait-car.jpg" alt="" style="object-position: center 20%" />
+                <figcaption>Lifestyle</figcaption>
+              </figure>
+              <figure class="mood__c">
+                <img src="./photos/lifestyle-car.jpg" alt="" style="object-position: center 18%" />
+                <figcaption>Beauty</figcaption>
+              </figure>
             </div>
-          </article>
-
-          <article class="card">
-            <p class="kicker">Investment</p>
-            <h3>Rate card.</h3>
-            <table>
-              <tbody>
-                <tr><td>IG feed</td><td>R2,800</td></tr>
-                <tr><td>IG Reel</td><td>R4,200</td></tr>
-                <tr><td>Stories 3–5</td><td>R1,400</td></tr>
-                <tr><td>TikTok</td><td>R2,200</td></tr>
-                <tr><td>Facebook</td><td>R1,800</td></tr>
-              </tbody>
-            </table>
-            <div class="packs packs--mobile">
-              <article class="featured"><p>Signature</p><h4>R7,800</h4></article>
-              <article><p>Starter</p><h4>R5,200</h4></article>
-              <article><p>Cross-plat</p><h4>R9,500</h4></article>
-              <article><p>Month</p><h4>R16,500</h4></article>
+            <div class="story__body story__body--float">
+              <p class="story__eyebrow light">The mood</p>
+              <h2 class="story__headline light">Looks that feel<br />like a real life.</h2>
             </div>
-          </article>
+          </section>
 
-          <article class="card card--contact">
-            <p class="kicker">Work with me</p>
-            <h3>Let’s make something <em>beautiful.</em></h3>
-            <a href="mailto:siphokazithandeka0@gmail.com">siphokazithandeka0@gmail.com</a>
-            <a href="tel:+27734441549">073 444 1549</a>
-            <a href="https://www.instagram.com/sphokazi_mavuso/" target="_blank" rel="noopener">@sphokazi_mavuso</a>
-            <a class="btn btn--solid" href="./Siphokazi_Mavuso_Media_Kit.pdf" download>Download PDF</a>
-          </article>
+          <!-- 5 Rates - punchy, not a spreadsheet -->
+          <section class="story story--rates">
+            <div class="story__body story__body--rates">
+              <p class="story__eyebrow dark">Investment</p>
+              <h2 class="story__headline">Pretty work.<br /><em>Clear rates.</em></h2>
+              <div class="rate-orbit">
+                <article class="rate-orbit__hero">
+                  <p>Most booked</p>
+                  <h3>Signature</h3>
+                  <strong>R7,800</strong>
+                  <span>Reel + feed + 5 Stories</span>
+                </article>
+                <div class="rate-orbit__row">
+                  <div><b>R4,200</b><span>Reel</span></div>
+                  <div><b>R2,800</b><span>Feed</span></div>
+                  <div><b>R1,400</b><span>Stories</span></div>
+                </div>
+                <div class="rate-orbit__row rate-orbit__row--soft">
+                  <div><b>R5,200</b><span>Starter</span></div>
+                  <div><b>R9,500</b><span>Cross-plat</span></div>
+                  <div><b>R16,500</b><span>Month</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 6 Connect -->
+          <section class="story story--connect">
+            <img class="story__media" src="./photos/cover-pink.jpg" alt="" style="object-position: center 28%" />
+            <div class="story__scrim story__scrim--deep"></div>
+            <div class="story__body story__body--bottom">
+              <p class="story__eyebrow light">Work with me</p>
+              <h2 class="story__headline light">Let’s make<br />something <em>beautiful.</em></h2>
+              <div class="story__cta">
+                <a class="btn btn--solid btn--wide" href="mailto:siphokazithandeka0@gmail.com">Email Siphokazi</a>
+                <a class="btn btn--glass btn--wide" href="https://www.instagram.com/sphokazi_mavuso/" target="_blank" rel="noopener">Instagram</a>
+                <a class="btn btn--glass btn--wide" href="./Siphokazi_Mavuso_Media_Kit.pdf" download>Download PDF</a>
+              </div>
+              <a class="story__phone" href="tel:+27734441549">073 444 1549</a>
+            </div>
+          </section>
         </div>
-        <div class="dots" id="mobileDots" aria-hidden="true"></div>
+        <p class="story-hint" id="storyHint">Swipe up</p>
       </div>
     </main>
 
