@@ -960,50 +960,186 @@ a {
     padding-bottom: max(1.6rem, env(safe-area-inset-bottom));
   }
 
-  .story__eyebrow {
-    font-size: 0.68rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
+  /* ---- Typographic layering (lookbook, not paragraphs) ---- */
+  .type-whisper {
+    font-size: 0.62rem;
+    letter-spacing: 0.42em;
+    text-transform: lowercase;
     color: var(--gold-pale);
-    margin-bottom: 0.45rem;
+    font-weight: 400;
+    margin: 0 0 0.35rem;
   }
 
-  .story__eyebrow.dark {
-    color: var(--gold);
+  .type-whisper--center {
+    display: block;
+    text-align: center;
+    margin-top: 0.35rem;
   }
 
-  .story__eyebrow.light {
-    color: var(--gold-pale);
+  .type-whisper.light {
+    color: rgba(255, 208, 228, 0.9);
   }
 
-  .story__title {
+  .type-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 0.92;
+    margin-bottom: 0.85rem;
+  }
+
+  .type-stack--hero {
+    margin-bottom: 0.55rem;
+  }
+
+  .type-stack--pulse {
+    align-items: center;
+    margin-bottom: 1.2rem;
+    position: relative;
+  }
+
+  .type-stack--mood {
+    margin-bottom: 0;
+  }
+
+  .type-stack--rates {
+    margin-bottom: 0.9rem;
+  }
+
+  .type-stack--connect {
+    margin-bottom: 0.4rem;
+  }
+
+  .type-giant {
     font-family: "Cormorant Garamond", serif;
     font-weight: 500;
-    font-size: clamp(3rem, 14vw, 4rem);
+    font-size: clamp(3.4rem, 16vw, 4.6rem);
     color: #fff;
-    line-height: 0.9;
+    letter-spacing: -0.03em;
   }
 
-  .story__script {
+  .type-lead {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 11vw, 3.2rem);
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+
+  .type-lead--soft {
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.88;
+  }
+
+  .type-lead--end {
+    font-size: clamp(1.7rem, 7.5vw, 2.2rem);
+    margin-top: 0.15rem;
+    opacity: 0.92;
+  }
+
+  .type-lead--ink {
+    color: var(--wine);
+  }
+
+  .type-lead.light {
+    color: #fff;
+  }
+
+  .type-script {
     font-family: "Great Vibes", cursive;
-    font-size: clamp(2.2rem, 10vw, 3rem);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 12vw, 3.4rem);
     color: #ffd0e4;
-    margin: 0.1rem 0 0.7rem;
+    line-height: 0.85;
   }
 
-  .story__line {
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+  .type-script--offset {
+    margin-top: -0.55rem;
+    margin-left: 1.6rem;
+    transform: rotate(-4deg);
+    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  .type-script--blush {
+    color: #ffb7d5;
+    margin: 0.05rem 0;
+  }
+
+  .type-script--wine {
+    color: var(--burgundy);
+    font-size: clamp(2.8rem, 14vw, 3.8rem);
+    margin-bottom: -0.35rem;
+  }
+
+  .type-script--ghost {
+    position: absolute;
+    top: -1.1rem;
+    color: rgba(255, 176, 213, 0.35);
+    font-size: clamp(2.8rem, 14vw, 4rem);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .type-script--xl {
+    font-size: clamp(3.4rem, 16vw, 4.6rem);
+    color: #ffc2dc;
+    margin-top: -0.2rem;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .type-mega {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(5rem, 26vw, 6.8rem);
+    font-weight: 500;
+    color: #fff;
+    line-height: 0.8;
+    letter-spacing: -0.04em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .type-soft-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: lowercase;
+  }
+
+  .type-soft-row i {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255, 182, 213, 0.7);
+    display: inline-block;
+  }
+
+  .type-soft-row--pink {
+    justify-content: center;
+    margin-top: 1.1rem;
+    color: #ffd0e4;
+  }
+
+  .type-aside {
+    margin-top: 0.15rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
   }
 
   .story__swipe {
-    margin-top: 1.1rem;
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 0.68rem;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
     animation: nudgeUp 1.8s ease-in-out infinite;
   }
 
@@ -1019,52 +1155,39 @@ a {
     }
   }
 
-  .story__headline {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 500;
-    font-size: clamp(1.9rem, 8vw, 2.5rem);
-    line-height: 1.02;
-    color: var(--ink);
-    margin-bottom: 0.7rem;
+  .mood-type {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    padding-top: calc(max(0.55rem, env(safe-area-inset-top)) + 5.2rem);
   }
 
-  .story__headline.light {
-    color: #fff;
+  .mood-type span {
+    position: absolute;
+    font-family: "Great Vibes", cursive;
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+    font-size: clamp(1.6rem, 7vw, 2.1rem);
   }
 
-  .story__headline em {
-    font-style: italic;
-    color: #ffb7d5;
+  .mood-type__a {
+    left: 8%;
+    top: 58%;
+    transform: rotate(-8deg);
   }
 
-  .story__headline.light em {
-    color: #ffc2dc;
+  .mood-type__b {
+    right: 6%;
+    top: 38%;
+    transform: rotate(6deg);
+    font-size: clamp(1.3rem, 5.5vw, 1.7rem);
   }
 
-  .story__blurb {
-    color: rgba(255, 255, 255, 0.86);
-    font-size: 0.95rem;
-    line-height: 1.45;
-    max-width: 28ch;
-    margin-bottom: 0.85rem;
-  }
-
-  .story__pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .story__pills span {
-    padding: 0.35rem 0.7rem;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.14);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    color: #fff;
-    font-size: 0.62rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    backdrop-filter: blur(8px);
+  .mood-type__c {
+    right: 10%;
+    bottom: 28%;
+    transform: rotate(-3deg);
   }
 
   /* Pulse numbers */
@@ -1084,24 +1207,6 @@ a {
     top: 18%;
     left: 50%;
     transform: translateX(-50%);
-  }
-
-  .story__mega {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(4.5rem, 22vw, 6rem);
-    font-weight: 500;
-    color: #fff;
-    line-height: 0.85;
-    text-align: center;
-  }
-
-  .story__mega-label {
-    text-align: center;
-    color: var(--gold-pale);
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin: 0.6rem 0 1.4rem;
   }
 
   .story__pulse-grid {
@@ -1129,27 +1234,9 @@ a {
 
   .story__pulse-grid span {
     font-size: 0.62rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
-  }
-
-  .story__ribbon {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    margin-top: 1.1rem;
-  }
-
-  .story__ribbon span {
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #ffd0e4;
-    background: rgba(201, 58, 122, 0.35);
-    border-radius: 999px;
-    padding: 0.35rem 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: lowercase;
+    color: rgba(255, 255, 255, 0.55);
   }
 
   /* Moodboard */
@@ -1185,17 +1272,6 @@ a {
     object-fit: cover;
   }
 
-  .mood figcaption {
-    position: absolute;
-    left: 0.55rem;
-    bottom: 0.55rem;
-    color: #fff;
-    font-size: 0.58rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-  }
-
   .story__body--float {
     background: linear-gradient(180deg, transparent, rgba(18, 8, 12, 0.88));
   }
@@ -1226,18 +1302,11 @@ a {
     box-shadow: 0 18px 40px rgba(79, 30, 40, 0.28);
   }
 
-  .rate-orbit__hero p {
-    font-size: 0.62rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold-pale);
-  }
-
   .rate-orbit__hero h3 {
     font-family: "Cormorant Garamond", serif;
     font-size: 1.8rem;
     font-weight: 500;
-    margin: 0.15rem 0;
+    margin: 0.1rem 0;
   }
 
   .rate-orbit__hero strong {
@@ -1248,10 +1317,12 @@ a {
     line-height: 1;
   }
 
-  .rate-orbit__hero span {
+  .rate-orbit__note {
     display: block;
     margin-top: 0.35rem;
-    font-size: 0.82rem;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 0.95rem;
     opacity: 0.8;
   }
 
@@ -1279,8 +1350,8 @@ a {
 
   .rate-orbit__row span {
     font-size: 0.58rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    text-transform: lowercase;
     color: var(--ink-soft);
   }
 
@@ -1312,7 +1383,7 @@ a {
     justify-content: center;
     font-size: 0.72rem;
     letter-spacing: 0.12em;
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-weight: 500;
     backdrop-filter: blur(10px);
   }
@@ -1321,6 +1392,8 @@ a {
     background: #fff;
     color: var(--wine);
     border-color: #fff;
+    text-transform: lowercase;
+    letter-spacing: 0.14em;
   }
 
   .story__phone {
