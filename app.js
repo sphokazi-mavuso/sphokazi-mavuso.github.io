@@ -26,7 +26,7 @@
     localStorage.setItem(MUTE_KEY, muted ? "1" : "0");
     if (ambience) {
       ambience.muted = muted;
-      ambience.volume = muted ? 0 : 0.32;
+      ambience.volume = muted ? 0 : 0.16;
     }
     if (muteBtn) {
       muteBtn.classList.toggle("is-muted", muted);
@@ -41,7 +41,7 @@
     if (!ambience) return;
     const muted = isMuted();
     ambience.loop = true;
-    ambience.volume = muted ? 0 : 0.32;
+    ambience.volume = muted ? 0 : 0.16;
     ambience.muted = muted;
     setMuted(muted);
     const play = ambience.play();
