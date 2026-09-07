@@ -7,12 +7,60 @@
   const nextBtn = document.getElementById("nextBtn");
   const mobileTrack = document.getElementById("mobileTrack");
   const storyProgress = document.getElementById("storyProgress");
+  const ambience = document.getElementById("ambience");
+  const muteBtn = document.getElementById("muteBtn");
 
   let pageFlip = null;
   let opened = false;
+  const MUTE_KEY = "siphokazi-kit-muted";
 
   function isMobile() {
     return window.matchMedia("(max-width: 860px)").matches;
+  }
+
+  function isMuted() {
+    return localStorage.getItem(MUTE_KEY) === "1";
+  }
+
+  function setMuted(muted) {
+    localStorage.setItem(MUTE_KEY, muted ? "1" : "0");
+    if (ambience) {
+      ambience.muted = muted;
+      ambience.volume = muted ? 0 : 0.28;
+    }
+    if (muteBtn) {
+      muteBtn.classList.toggle("is-muted", muted);
+      muteBtn.setAttribute("aria-pressed", muted ? "true" : "false");
+      muteBtn.setAttribute("aria-label", muted ? "Unmute sound" : "Mute sound");
+      const icon = muteBtn.querySelector(".mute-icon");
+      if (icon) icon.textContent = "♪";
+    }
+  }
+
+  function startAmbience() {
+    if (!ambience) return;
+    const muted = isMuted();
+    ambience.loop = true;
+    ambience.volume = muted ? 0 : 0.28;
+    ambience.muted = muted;
+    setMuted(muted);
+    const play = ambience.play();
+    if (play && typeof play.catch === "function") {
+      play.catch(() => {
+        /* Autoplay may still fail in rare cases; mute button remains available */
+      });
+    }
+  }
+
+  if (muteBtn) {
+    setMuted(isMuted());
+    muteBtn.addEventListener("click", () => {
+      const next = !isMuted();
+      setMuted(next);
+      if (!next && ambience && ambience.paused && opened) {
+        ambience.play().catch(() => {});
+      }
+    });
   }
 
   function openExperience() {
@@ -20,6 +68,7 @@
     opened = true;
 
     butterfly.classList.add("is-flying");
+    startAmbience();
 
     window.setTimeout(() => {
       entrance.classList.add("is-leaving");
@@ -124,9 +173,8 @@
     );
     syncProgress();
 
-    // Tap left/right edges to nudge stories (lookbook feel)
     mobileTrack.addEventListener("click", (e) => {
-      if (e.target.closest("a, button")) return;
+      if (e.target.closest("a, button, .mission-scroll, .rate-orbit")) return;
       const y = e.clientY;
       const h = window.innerHeight;
       if (y > h * 0.78) {

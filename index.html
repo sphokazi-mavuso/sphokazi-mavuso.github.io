@@ -99,6 +99,9 @@
           <span class="chrome__meta">Media kit</span>
         </div>
         <div class="chrome__actions">
+          <button type="button" id="muteBtn" class="btn btn--mute" aria-label="Mute sound" aria-pressed="false">
+            <span class="mute-icon" aria-hidden="true">♪</span>
+          </button>
           <a class="btn btn--ghost" href="./Siphokazi_Mavuso_Media_Kit.pdf" download>
             Download PDF
           </a>
@@ -145,6 +148,18 @@
                     <div class="chips">
                       <span>Styling</span><span>Skincare</span><span>Travel</span><span>Home</span>
                     </div>
+                    <p class="mission-label">My mission</p>
+                    <p class="mission-copy">
+                      As a multi-faceted lifestyle content creator, I thrive on connecting with my audience and
+                      spreading joy. My expertise spans fashion, beauty, travel, lifestyle, and interior design.
+                      I’m passionate about sharing practical tips on styling trendy outfits, skincare routines,
+                      exploring new destinations, and crafting cozy homes. My content resonates with both men and
+                      women, and I’m committed to being my authentic self — inspiring others to do the same. I
+                      believe everyone deserves to feel confident and empowered, regardless of their background or
+                      circumstances. I’m excited to collaborate with brands that share my vision of inclusivity,
+                      diversity, and global connection. Together, let’s create content that inspires, educates, and
+                      uplifts our community.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -219,17 +234,36 @@
                   <tbody>
                     <tr><td>Instagram feed / carousel</td><td>R2,800</td></tr>
                     <tr><td>Instagram Reel</td><td>R4,200</td></tr>
-                    <tr><td>Stories (3–5)</td><td>R1,400</td></tr>
-                    <tr><td>TikTok video</td><td>R2,200</td></tr>
-                    <tr><td>Facebook post / video</td><td>R1,800</td></tr>
+                    <tr><td>Stories — set of 3–5</td><td>R1,400</td></tr>
+                    <tr><td>TikTok sponsored video</td><td>R2,200</td></tr>
+                    <tr><td>Facebook sponsored post / video</td><td>R1,800</td></tr>
                   </tbody>
                 </table>
                 <div class="packs">
-                  <article><p>Starter</p><h4>R5,200</h4><span>1 Reel + 3 Stories</span></article>
-                  <article class="featured"><p>Signature</p><h4>R7,800</h4><span>Reel + feed + 5 Stories</span></article>
-                  <article><p>Cross-platform</p><h4>R9,500</h4><span>Signature + TikTok</span></article>
-                  <article><p>Brand month</p><h4>R16,500</h4><span>4-week retainer</span></article>
+                  <article>
+                    <p>Starter</p>
+                    <h4>R5,200</h4>
+                    <span>1 Instagram Reel + 3 Stories</span>
+                  </article>
+                  <article class="featured">
+                    <p>Most booked · Signature</p>
+                    <h4>R7,800</h4>
+                    <span>1 Reel + 1 feed post + 5 Stories</span>
+                  </article>
+                  <article>
+                    <p>Cross-platform</p>
+                    <h4>R9,500</h4>
+                    <span>Signature package + 1 TikTok video</span>
+                  </article>
+                  <article>
+                    <p>Brand month</p>
+                    <h4>R16,500</h4>
+                    <span>4 weeks: 2 Reels, 2 feeds, weekly Stories, 1 TikTok</span>
+                  </article>
                 </div>
+                <p class="rates-disclaimer">
+                  Rates exclude paid usage rights, whitelisting and exclusivity. Custom quotes welcome.
+                </p>
               </div>
             </div>
 
@@ -295,7 +329,36 @@
             </div>
           </section>
 
-          <!-- 3 Pulse / numbers -->
+          <!-- 3 Mission -->
+          <section class="story story--mission">
+            <div class="story__body story__body--mission">
+              <p class="type-whisper dark">my mission</p>
+              <div class="type-stack type-stack--mission">
+                <span class="type-script type-script--wine">connect,</span>
+                <span class="type-lead type-lead--ink">spread joy,</span>
+                <span class="type-lead type-lead--ink type-lead--soft">stay soft.</span>
+              </div>
+              <div class="mission-scroll">
+                <p>
+                  As a multi-faceted lifestyle content creator, I thrive on connecting with my audience and spreading
+                  joy. My expertise spans fashion, beauty, travel, lifestyle, and interior design. I’m passionate about
+                  sharing practical tips on styling trendy outfits, skincare routines, exploring new destinations, and
+                  crafting cozy homes.
+                </p>
+                <p>
+                  My content resonates with both men and women, and I’m committed to being my authentic self —
+                  inspiring others to do the same. I believe everyone deserves to feel confident and empowered,
+                  regardless of their background or circumstances.
+                </p>
+                <p>
+                  I’m excited to collaborate with brands that share my vision of inclusivity, diversity, and global
+                  connection. Together, let’s create content that inspires, educates, and uplifts our community.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4 Pulse / numbers -->
           <section class="story story--pulse">
             <div class="story__glow"></div>
             <div class="story__body story__body--center">
@@ -343,7 +406,7 @@
             </div>
           </section>
 
-          <!-- 5 Rates -->
+          <!-- 6 Rates -->
           <section class="story story--rates">
             <div class="story__body story__body--rates">
               <div class="type-stack type-stack--rates">
@@ -356,23 +419,35 @@
                   <p class="type-whisper light">most booked</p>
                   <h3>Signature</h3>
                   <strong>R7,800</strong>
-                  <span class="rate-orbit__note">one reel · one feed · five stories</span>
+                  <span class="rate-orbit__note">1 Reel + 1 feed post + 5 Stories</span>
                 </article>
-                <div class="rate-orbit__row">
-                  <div><b>R4,200</b><span>reel</span></div>
-                  <div><b>R2,800</b><span>feed</span></div>
-                  <div><b>R1,400</b><span>stories</span></div>
+                <ul class="rate-list">
+                  <li><span>Instagram feed / carousel</span><b>R2,800</b></li>
+                  <li><span>Instagram Reel</span><b>R4,200</b></li>
+                  <li><span>Stories — set of 3–5</span><b>R1,400</b></li>
+                  <li><span>TikTok sponsored video</span><b>R2,200</b></li>
+                  <li><span>Facebook sponsored post / video</span><b>R1,800</b></li>
+                </ul>
+                <div class="rate-packs">
+                  <article>
+                    <p>Starter · R5,200</p>
+                    <span>1 Instagram Reel + 3 Stories</span>
+                  </article>
+                  <article>
+                    <p>Cross-platform · R9,500</p>
+                    <span>Signature package + 1 TikTok video</span>
+                  </article>
+                  <article>
+                    <p>Brand month · R16,500</p>
+                    <span>4 weeks: 2 Reels, 2 feeds, weekly Stories, 1 TikTok</span>
+                  </article>
                 </div>
-                <div class="rate-orbit__row rate-orbit__row--soft">
-                  <div><b>R5,200</b><span>starter</span></div>
-                  <div><b>R9,500</b><span>cross</span></div>
-                  <div><b>R16,500</b><span>month</span></div>
-                </div>
+                <p class="rate-disclaimer">Rates exclude paid usage, whitelisting &amp; exclusivity.</p>
               </div>
             </div>
           </section>
 
-          <!-- 6 Connect -->
+          <!-- 7 Connect -->
           <section class="story story--connect">
             <img class="story__media" src="./photos/cover-pink.jpg" alt="" style="object-position: center 28%" />
             <div class="story__scrim story__scrim--deep"></div>
@@ -395,6 +470,7 @@
       </div>
     </main>
 
+    <audio id="ambience" src="./audio/ambience.mp3" loop preload="auto"></audio>
     <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
     <script src="./app.js"></script>
   </body>
