@@ -1,0 +1,148 @@
+(() => {
+  const entrance = document.getElementById("entrance");
+  const butterfly = document.getElementById("butterfly");
+  const experience = document.getElementById("experience");
+  const pageIndicator = document.getElementById("pageIndicator");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const mobileTrack = document.getElementById("mobileTrack");
+  const mobileDots = document.getElementById("mobileDots");
+
+  let pageFlip = null;
+  let opened = false;
+
+  function isMobile() {
+    return window.matchMedia("(max-width: 860px)").matches;
+  }
+
+  function openExperience() {
+    if (opened) return;
+    opened = true;
+
+    butterfly.classList.add("is-flying");
+
+    window.setTimeout(() => {
+      entrance.classList.add("is-leaving");
+      experience.hidden = false;
+      requestAnimationFrame(() => experience.classList.add("is-open"));
+
+      if (isMobile()) {
+        setupMobile();
+      } else {
+        setupFlipbook();
+      }
+
+      window.setTimeout(() => entrance.remove(), 1000);
+    }, 900);
+  }
+
+  butterfly.addEventListener("click", openExperience);
+  butterfly.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openExperience();
+    }
+  });
+
+  function setupFlipbook() {
+    const el = document.getElementById("flipbook");
+    if (!el || typeof St === "undefined" || !St.PageFlip) {
+      console.warn("PageFlip unavailable");
+      return;
+    }
+
+    const wrap = el.parentElement;
+    const width = Math.floor(wrap.clientWidth);
+    const height = Math.floor(wrap.clientHeight);
+
+    pageFlip = new St.PageFlip(el, {
+      width: Math.max(320, Math.floor(width / 2)),
+      height: Math.max(420, height),
+      size: "stretch",
+      minWidth: 280,
+      maxWidth: 560,
+      minHeight: 400,
+      maxHeight: 800,
+      drawShadow: true,
+      flippingTime: 900,
+      usePortrait: true,
+      startZIndex: 0,
+      autoSize: true,
+      maxShadowOpacity: 0.35,
+      showCover: true,
+      mobileScrollSupport: false,
+      swipeDistance: 40,
+      clickEventForward: true,
+      useMouseEvents: true,
+      disableFlipByClick: false,
+    });
+
+    pageFlip.loadFromHTML(document.querySelectorAll("#flipbook .sheet"));
+
+    const updateIndicator = () => {
+      const current = pageFlip.getCurrentPageIndex() + 1;
+      const total = pageFlip.getPageCount();
+      pageIndicator.textContent = `${current} / ${total}`;
+    };
+
+    pageFlip.on("flip", updateIndicator);
+    pageFlip.on("changeState", updateIndicator);
+    updateIndicator();
+
+    prevBtn.addEventListener("click", () => pageFlip.flipPrev());
+    nextBtn.addEventListener("click", () => pageFlip.flipNext());
+
+    window.addEventListener(
+      "keydown",
+      (e) => {
+        if (e.key === "ArrowLeft") pageFlip.flipPrev();
+        if (e.key === "ArrowRight") pageFlip.flipNext();
+      },
+      { passive: true },
+    );
+  }
+
+  function setupMobile() {
+    const cards = [...mobileTrack.querySelectorAll(".card")];
+    mobileDots.innerHTML = cards.map((_, i) => `<span${i === 0 ? ' class="is-active"' : ""}></span>`).join("");
+    const dots = [...mobileDots.querySelectorAll("span")];
+
+    const syncDots = () => {
+      const cardWidth = cards[0].getBoundingClientRect().width + 13.6;
+      const index = Math.round(mobileTrack.scrollLeft / cardWidth);
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+    };
+
+    mobileTrack.addEventListener("scroll", () => {
+      window.requestAnimationFrame(syncDots);
+    }, { passive: true });
+  }
+
+  // Soft floating petals on entrance
+  const petals = document.querySelector(".entrance__petals");
+  if (petals) {
+    for (let i = 0; i < 14; i++) {
+      const speck = document.createElement("span");
+      speck.style.cssText = `
+        position:absolute;
+        width:${4 + Math.random() * 6}px;
+        height:${4 + Math.random() * 6}px;
+        border-radius:50% 50% 45% 55%;
+        background:rgba(255,${180 + Math.floor(Math.random() * 50)},${210 + Math.floor(Math.random() * 30)},${0.35 + Math.random() * 0.4});
+        left:${Math.random() * 100}%;
+        top:${Math.random() * 100}%;
+        animation: floatSpeck ${6 + Math.random() * 8}s ease-in-out ${Math.random() * 4}s infinite;
+      `;
+      petals.appendChild(speck);
+    }
+
+    const style = document.createElement("style");
+    style.textContent = `
+      @keyframes floatSpeck {
+        0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+        50% { transform: translateY(-28px) rotate(20deg); opacity: 1; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+})();

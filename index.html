@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Siphokazi Mavuso — Fashion, Beauty & Lifestyle media kit and rate card." />
+    <title>Siphokazi Mavuso — Media Kit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/css/page-flip.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Entrance -->
+    <section id="entrance" class="entrance" aria-label="Welcome">
+      <div class="entrance__glow entrance__glow--a"></div>
+      <div class="entrance__glow entrance__glow--b"></div>
+      <div class="entrance__petals" aria-hidden="true"></div>
+
+      <p class="entrance__eyebrow">Media kit · 2026</p>
+      <h1 class="entrance__name">Siphokazi</h1>
+      <p class="entrance__hint">Touch the butterfly</p>
+
+      <button type="button" id="butterfly" class="butterfly" aria-label="Open media kit">
+        <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" class="butterfly__svg">
+          <defs>
+            <linearGradient id="wingL" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffb7d5" />
+              <stop offset="45%" stop-color="#e879b0" />
+              <stop offset="100%" stop-color="#9b3d6a" />
+            </linearGradient>
+            <linearGradient id="wingR" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ffd0e4" />
+              <stop offset="50%" stop-color="#f095c4" />
+              <stop offset="100%" stop-color="#c45a8a" />
+            </linearGradient>
+            <radialGradient id="wingShine" cx="35%" cy="30%" r="55%">
+              <stop offset="0%" stop-color="#fff6fb" stop-opacity="0.75" />
+              <stop offset="100%" stop-color="#fff" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+          <g class="butterfly__body">
+            <ellipse cx="100" cy="82" rx="5" ry="28" fill="#4a2034" />
+            <circle cx="100" cy="52" r="6" fill="#3a1828" />
+            <path d="M96 48 Q88 28 82 18" stroke="#3a1828" stroke-width="1.6" fill="none" stroke-linecap="round" />
+            <path d="M104 48 Q112 28 118 18" stroke="#3a1828" stroke-width="1.6" fill="none" stroke-linecap="round" />
+            <circle cx="82" cy="18" r="2.2" fill="#e879b0" />
+            <circle cx="118" cy="18" r="2.2" fill="#e879b0" />
+          </g>
+          <g class="butterfly__wing butterfly__wing--left">
+            <path
+              d="M95 70 C70 20 18 28 22 68 C24 92 55 105 95 92 C75 85 70 78 95 70 Z"
+              fill="url(#wingL)"
+            />
+            <path
+              d="M95 88 C68 95 42 118 55 138 C68 152 88 130 95 108 Z"
+              fill="url(#wingL)"
+              opacity="0.92"
+            />
+            <path
+              d="M95 70 C70 20 18 28 22 68 C24 92 55 105 95 92 C75 85 70 78 95 70 Z"
+              fill="url(#wingShine)"
+            />
+            <circle cx="48" cy="62" r="5" fill="#fff0f7" opacity="0.55" />
+            <circle cx="62" cy="48" r="3.5" fill="#ffe4f1" opacity="0.45" />
+          </g>
+          <g class="butterfly__wing butterfly__wing--right">
+            <path
+              d="M105 70 C130 20 182 28 178 68 C176 92 145 105 105 92 C125 85 130 78 105 70 Z"
+              fill="url(#wingR)"
+            />
+            <path
+              d="M105 88 C132 95 158 118 145 138 C132 152 112 130 105 108 Z"
+              fill="url(#wingR)"
+              opacity="0.92"
+            />
+            <path
+              d="M105 70 C130 20 182 28 178 68 C176 92 145 105 105 92 C125 85 130 78 105 70 Z"
+              fill="url(#wingShine)"
+            />
+            <circle cx="152" cy="62" r="5" fill="#fff0f7" opacity="0.55" />
+            <circle cx="138" cy="48" r="3.5" fill="#ffe4f1" opacity="0.45" />
+          </g>
+        </svg>
+      </button>
+
+      <p class="entrance__sub">Fashion · Beauty · Lifestyle</p>
+    </section>
+
+    <!-- Experience -->
+    <main id="experience" class="experience" hidden>
+      <header class="chrome">
+        <div class="chrome__brand">
+          <span class="chrome__script">Siphokazi</span>
+          <span class="chrome__meta">Media kit</span>
+        </div>
+        <div class="chrome__actions">
+          <a class="btn btn--ghost" href="./Siphokazi_Mavuso_Media_Kit.pdf" download>
+            Download PDF
+          </a>
+          <a class="btn btn--solid" href="https://www.instagram.com/sphokazi_mavuso/" target="_blank" rel="noopener">
+            Instagram
+          </a>
+        </div>
+      </header>
+
+      <!-- Desktop flipbook -->
+      <div class="stage stage--desktop" aria-label="Media kit flipbook">
+        <button type="button" class="nav-btn nav-btn--prev" id="prevBtn" aria-label="Previous page">‹</button>
+
+        <div class="book-wrap">
+          <div id="flipbook" class="flipbook">
+            <!-- Cover -->
+            <div class="sheet sheet--cover">
+              <img class="sheet__bg" src="./photos/cover-pink.jpg" alt="" />
+              <div class="sheet__veil"></div>
+              <div class="sheet__cover-copy">
+                <p class="kicker light">Media kit · 2026</p>
+                <h2>Siphokazi <em>Mavuso</em></h2>
+                <p class="tags">Fashion · Beauty · Lifestyle</p>
+                <p class="handle">@sphokazi_mavuso</p>
+              </div>
+            </div>
+
+            <!-- About -->
+            <div class="sheet sheet--paper">
+              <div class="sheet-inner about-sheet">
+                <p class="kicker">The creator</p>
+                <h3>Warm style. <em>Honest presence.</em></h3>
+                <div class="about-grid">
+                  <img src="./photos/about-glasses.jpg" alt="Siphokazi portrait" />
+                  <div>
+                    <p>
+                      Siphokazi Mavuso is a South African fashion, beauty and lifestyle creator whose work feels
+                      lived-in — Sunday ease with campaign polish.
+                    </p>
+                    <p>
+                      She builds content brands can step into: outfit stories, beauty rituals, and everyday luxury.
+                      Her audience comes for the look and stays for the honesty.
+                    </p>
+                    <div class="chips">
+                      <span>Styling</span><span>Skincare</span><span>Travel</span><span>Home</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Audience -->
+            <div class="sheet sheet--paper">
+              <div class="sheet-inner audience-sheet">
+                <p class="kicker">Audience &amp; platforms</p>
+                <h3>A close, high-trust community.</h3>
+                <div class="hero-stat">
+                  <div>
+                    <strong>11.2k</strong>
+                    <span>Instagram followers</span>
+                  </div>
+                  <div>
+                    <strong>~10k</strong>
+                    <span>Avg. video views</span>
+                  </div>
+                  <div>
+                    <strong>9%</strong>
+                    <span>Engagement</span>
+                  </div>
+                </div>
+                <div class="plat-row">
+                  <article><h4>Instagram</h4><b>11.2k</b></article>
+                  <article><h4>Facebook</h4><b>5.4k</b></article>
+                  <article><h4>TikTok</h4><b>2.3k</b></article>
+                </div>
+                <div class="demo-row">
+                  <div><strong>96%</strong><span>Reach</span></div>
+                  <div><strong>79%</strong><span>Women</span></div>
+                  <div><strong>82%</strong><span>From SA</span></div>
+                  <div><strong>9%</strong><span>Engage</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Look -->
+            <div class="sheet sheet--paper">
+              <div class="sheet-inner look-sheet">
+                <p class="kicker">The look</p>
+                <h3>Fashion that feels like a real life.</h3>
+                <div class="look-grid">
+                  <figure>
+                    <img src="./photos/fashion-black.jpg" alt="Fashion look" />
+                    <figcaption>Fashion</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="./photos/portrait-car.jpg" alt="Lifestyle look" />
+                    <figcaption>Lifestyle</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="./photos/lifestyle-car.jpg" alt="Beauty look" />
+                    <figcaption>Beauty</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rates -->
+            <div class="sheet sheet--paper">
+              <div class="sheet-inner rates-sheet">
+                <div class="rates-head">
+                  <div>
+                    <p class="kicker">Investment</p>
+                    <h3>Rate card.</h3>
+                  </div>
+                  <span class="rates-note">ZAR · 2026</span>
+                </div>
+                <table>
+                  <tbody>
+                    <tr><td>Instagram feed / carousel</td><td>R2,800</td></tr>
+                    <tr><td>Instagram Reel</td><td>R4,200</td></tr>
+                    <tr><td>Stories (3–5)</td><td>R1,400</td></tr>
+                    <tr><td>TikTok video</td><td>R2,200</td></tr>
+                    <tr><td>Facebook post / video</td><td>R1,800</td></tr>
+                  </tbody>
+                </table>
+                <div class="packs">
+                  <article><p>Starter</p><h4>R5,200</h4><span>1 Reel + 3 Stories</span></article>
+                  <article class="featured"><p>Signature</p><h4>R7,800</h4><span>Reel + feed + 5 Stories</span></article>
+                  <article><p>Cross-platform</p><h4>R9,500</h4><span>Signature + TikTok</span></article>
+                  <article><p>Brand month</p><h4>R16,500</h4><span>4-week retainer</span></article>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="sheet sheet--paper sheet--contact">
+              <div class="sheet-inner contact-sheet">
+                <img src="./photos/cover-pink.jpg" alt="" class="contact-photo" />
+                <div class="contact-copy">
+                  <p class="kicker">Work with me</p>
+                  <h3>Let’s make something <em>beautiful.</em></h3>
+                  <p class="lead">
+                    For collaborations, gifting and campaign briefs, reach Siphokazi directly.
+                  </p>
+                  <a href="mailto:siphokazithandeka0@gmail.com">siphokazithandeka0@gmail.com</a>
+                  <a href="tel:+27734441549">073 444 1549</a>
+                  <a href="https://www.instagram.com/sphokazi_mavuso/" target="_blank" rel="noopener">@sphokazi_mavuso</a>
+                  <p class="ready">Ready when you are.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="nav-btn nav-btn--next" id="nextBtn" aria-label="Next page">›</button>
+      </div>
+
+      <p class="page-indicator" id="pageIndicator">1 / 6</p>
+
+      <!-- Mobile swipe deck -->
+      <div class="stage stage--mobile" aria-label="Media kit cards">
+        <div class="mobile-track" id="mobileTrack">
+          <article class="card card--cover">
+            <img src="./photos/cover-pink.jpg" alt="" />
+            <div class="card__veil"></div>
+            <div class="card__copy">
+              <p class="kicker light">Media kit · 2026</p>
+              <h2>Siphokazi <em>Mavuso</em></h2>
+              <p>Fashion · Beauty · Lifestyle</p>
+              <p class="handle">@sphokazi_mavuso</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <p class="kicker">The creator</p>
+            <h3>Warm style. <em>Honest presence.</em></h3>
+            <img class="card__portrait" src="./photos/about-glasses.jpg" alt="Siphokazi" />
+            <p>
+              A South African fashion, beauty and lifestyle creator — Sunday ease with campaign polish. Content brands
+              can step into, with honesty at the centre.
+            </p>
+            <div class="chips">
+              <span>Styling</span><span>Skincare</span><span>Travel</span><span>Home</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <p class="kicker">Audience</p>
+            <h3>High-trust community.</h3>
+            <div class="hero-stat hero-stat--stack">
+              <div><strong>11.2k</strong><span>Instagram</span></div>
+              <div><strong>~10k</strong><span>Avg. views</span></div>
+              <div><strong>9%</strong><span>Engagement</span></div>
+            </div>
+            <div class="plat-row">
+              <article><h4>IG</h4><b>11.2k</b></article>
+              <article><h4>FB</h4><b>5.4k</b></article>
+              <article><h4>TT</h4><b>2.3k</b></article>
+            </div>
+            <div class="demo-row">
+              <div><strong>96%</strong><span>Reach</span></div>
+              <div><strong>79%</strong><span>Women</span></div>
+              <div><strong>82%</strong><span>SA</span></div>
+              <div><strong>9%</strong><span>Engage</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <p class="kicker">The look</p>
+            <h3>Real-life fashion.</h3>
+            <div class="look-grid look-grid--mobile">
+              <figure><img src="./photos/fashion-black.jpg" alt="" /><figcaption>Fashion</figcaption></figure>
+              <figure><img src="./photos/portrait-car.jpg" alt="" /><figcaption>Lifestyle</figcaption></figure>
+              <figure><img src="./photos/lifestyle-car.jpg" alt="" /><figcaption>Beauty</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="card">
+            <p class="kicker">Investment</p>
+            <h3>Rate card.</h3>
+            <table>
+              <tbody>
+                <tr><td>IG feed</td><td>R2,800</td></tr>
+                <tr><td>IG Reel</td><td>R4,200</td></tr>
+                <tr><td>Stories 3–5</td><td>R1,400</td></tr>
+                <tr><td>TikTok</td><td>R2,200</td></tr>
+                <tr><td>Facebook</td><td>R1,800</td></tr>
+              </tbody>
+            </table>
+            <div class="packs packs--mobile">
+              <article class="featured"><p>Signature</p><h4>R7,800</h4></article>
+              <article><p>Starter</p><h4>R5,200</h4></article>
+              <article><p>Cross-plat</p><h4>R9,500</h4></article>
+              <article><p>Month</p><h4>R16,500</h4></article>
+            </div>
+          </article>
+
+          <article class="card card--contact">
+            <p class="kicker">Work with me</p>
+            <h3>Let’s make something <em>beautiful.</em></h3>
+            <a href="mailto:siphokazithandeka0@gmail.com">siphokazithandeka0@gmail.com</a>
+            <a href="tel:+27734441549">073 444 1549</a>
+            <a href="https://www.instagram.com/sphokazi_mavuso/" target="_blank" rel="noopener">@sphokazi_mavuso</a>
+            <a class="btn btn--solid" href="./Siphokazi_Mavuso_Media_Kit.pdf" download>Download PDF</a>
+          </article>
+        </div>
+        <div class="dots" id="mobileDots" aria-hidden="true"></div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
